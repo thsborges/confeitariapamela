@@ -7,3 +7,113 @@
   box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9caca;
+    color: #333;
+    
+}
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: #AE9A63;
+    text-align: center;
+    margin-top: 20px;
+}
+header {
+    background-color: #faeeee;
+    border-bottom: 1px solid #AE9A63;
+    width: 100%;
+    height: 200px;
+    position: sticky; 
+    top: 0;
+    left: 0;
+}
+
+#contato-info {
+    width: 100%;
+    background-color: #bb016e;
+    text-align: center;
+}
+
+#contato-info a {
+    color: #fff;
+    font-family: "Public Sans", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#contato-info a:hover {
+    color: #f4f4f4;
+}
+
+header > #logo {
+    margin: 30px auto;
+    border: 1px solid #AE9A63;
+    max-width: 430px;
+}
+header > #logo > h1 {
+    
+    padding: 20px;
+    text-align: center;
+}
+header > #logo > h1 > #titulo {
+    font-family: "Italiana", sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #AE9A63;
+    text-align: center;
+}
+
+header > #logo > h1 > #subtitulo {
+    font-family: "Public Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #AE9A63;
+    text-align: center;
+}
+
+#destaque {
+    display: block;
+    margin: auto;
+    text-align: center;    
+}
+
+#destaque > img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section#loja {
+    width: 100%;
+    max-width: 800px;
+    margin: -10px auto;
+    padding: 10px;
+    background-color: #fff;
+   
+}
+
+#loja > h2 {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.5rem;
+    color: #AE9A63;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#loja > p {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+    line-height: 1.5;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
