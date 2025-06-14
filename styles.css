@@ -18,18 +18,24 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 html, body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    background-color: #F8C9CA;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #333;        
+    background-color: var(--primary-color);
+  
 }
 
+body {
+
+    margin: 0 auto;
+    padding: 0;
+    background-color: #FDEDED;
+    min-width: 300px;
+}
 nav#contato-info {
     width: 100%;
     height: 50px;
@@ -50,12 +56,13 @@ header {
 
 }
 
-header > #logo {
+header > #box-logo {
     margin: 30px auto;
     border: 1px solid #AE9A63;
-    max-width: 430px;
+    min-width: 300px;
+    max-width: 400px;
 }
-header > #logo > h1 {
+header > #box-logo > h1 {
     
     padding: 20px;
     text-align: center;
