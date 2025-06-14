@@ -87,3 +87,13 @@ header > #box-logo > h2 {
     margin-top: 12px;
     margin-bottom: 31px;
 }
+
+#destaque {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+#destaque img {
+    width: 100%;
+    display: block;
+}
