@@ -93,24 +93,31 @@ header > #box-logo > h2 {
 }
 
 #boas-vindas {
-    margin: 0 auto;
     background-color: var(--background-color);
-    width: 95%;
-    max-width: 1080px;
+    width: 98%;
+    max-width: 1000px;
     min-width: 300px;
-    padding: 20px;
+    margin: auto;
     box-shadow:  2px 4px 10px rgba(0, 0, 0, 0.158);
+    text-align: center;
 }
 
 #boas-vindas > div {
-   display: inline-block;
-   text-align: center;
+    display: inline-block;
 }
 
-#boas-vindas-texto > h2 {
-    font-family: var(--font-h2);
-    color: var(--tittle-color);
-    font-size: 3em;
-    margin: auto;
+#boas-vindas-texto {
+    border: 1px solid black;
+    width: 490px;
+    height: 500px;
+
 }
 
+#boas-vindas-imagem {
+    border: 1px solid black;
+    width: 490px;
+    height: 500px;
+    background-image: url("https://i.imgur.com/1b0c4aH.png");
+
+
+}
