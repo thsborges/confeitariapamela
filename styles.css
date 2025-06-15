@@ -31,7 +31,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
+    background-color: var(--secondary-color);
     min-width: 300px;
 }
 nav#contato-info {
@@ -50,7 +50,7 @@ nav#contato-info a {
 }   
 
 header {
-    background-color: var(--background-color);
+    background-color: var(--secondary-color);
     min-width: 300px;
     max-width: 100%;
     height: 200px;
@@ -91,3 +91,26 @@ header > #box-logo > h2 {
     margin-top: 5px;
     margin-bottom: 30px;
 }
+
+#boas-vindas {
+    margin: 0 auto;
+    background-color: var(--background-color);
+    width: 95%;
+    max-width: 1080px;
+    min-width: 300px;
+    padding: 20px;
+    box-shadow:  2px 4px 10px rgba(0, 0, 0, 0.158);
+}
+
+#boas-vindas > div {
+   display: inline-block;
+   text-align: center;
+}
+
+#boas-vindas-texto > h2 {
+    font-family: var(--font-h2);
+    color: var(--tittle-color);
+    font-size: 3em;
+    margin: auto;
+}
+
