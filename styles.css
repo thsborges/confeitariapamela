@@ -2,9 +2,8 @@
 /* CSS Document */
 
 :root {
-    --primary-color: #BB016E;
-    --background-color: #FFDAE1;
-    --box-color: #F79DC3;
+    --background-color: #FFECEE;
+    --box-color: #FEFAFD;
     --pink-color: #FEB9D6;
     --tittle-color: #B3A16B;
     --tittle-color2: #948558;
@@ -29,8 +28,7 @@
 html {
     margin: 0;
     padding: 0;
-    width: 100%;
-    background-color: var(--primary-color);  
+    width: 100%; 
 }
 
 body {
@@ -42,14 +40,13 @@ body {
 nav#contato-info {
     width: 100%;
     height: 40px;
-    background-color: var(--primary-color);
     text-align: center;
 
 }
 
 nav#contato-info a {
     display: inline-block;
-    color: var(--background-color);
+    color: white;
     text-decoration: none;
     margin-top: 10px;
 }   
@@ -67,7 +64,7 @@ header > #box-logo {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #AE9A63;
+    border: 1px solid var(--border-color);
     width: 95%;
     min-width: 320px;
     max-width: 420px;
@@ -76,10 +73,10 @@ header > #box-logo {
 
 header > #box-logo > h1 {
     font-family: var(--font-title);
-    font-size: 2.2em;
-    font-weight: 500;
+    font-size: 2.1em;
+    font-weight: 400;
     letter-spacing: 1px;
-    color: var(--tittle-color);
+    color: var(--tittle-color2);
     text-align: center;
     margin-top: 30px;
     margin-bottom: 5px;
@@ -87,7 +84,7 @@ header > #box-logo > h1 {
 
 header > #box-logo > h2 {
     font-family: var(--font-subtitle);
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 500;
     font-style: normal;
     color: var(--tittle-color);
@@ -101,6 +98,13 @@ main {
     max-width: 1000px;
     min-width: 320px;
 }
+
+section {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+}
+
 section.card {
     background-color: var(--box-color);
     width: 95%;
@@ -129,14 +133,15 @@ section p {
 }
 
 #boas-vindas {
-    background-color: var(--pink-color);
+    background-color: var(--background-color);
 }
 #boas-vindas > img {
-    width: 90%;
+    border: 1px solid var(--border-color);
+    padding: 5px;
+    width: 100%;
     min-width: 300px;
-    max-width: 600px;
+    max-width: 1000px;
     margin: auto;
-
 }
 
 #fachada img {
