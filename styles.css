@@ -101,7 +101,7 @@ section.card {
     background-color: var(--background-color);
     width: 95%;
     margin: auto;
-    box-shadow:  1px 2px 8px rgba(0, 0, 0, 0.411);
+    box-shadow:  6px 6px 9px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
 }
