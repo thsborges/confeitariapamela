@@ -105,15 +105,6 @@ section {
     text-align: center;
 }
 
-section.card {
-    background-color: var(--box-color);
-    width: 95%;
-    margin: auto;
-    box-shadow:  6px 6px 9px rgba(0, 0, 0, 0.1);
-    text-align: center;
-
-}
-
 section h2 {
     font-family: var(--font-h2);
     font-size: 3em;
@@ -136,7 +127,7 @@ section p {
     display: block;
     margin: 0px auto;
     width: 95%;
-    max-width: 300px;
+    max-width: 200px;
     padding: 0px;
 }
 
@@ -165,6 +156,13 @@ img.foto {
     max-width: 1000px;
     margin: auto;
     text-align: center;
+}
+section.card {
+    background-color: var(--box-color);
+    box-shadow:  6px 6px 9px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    margin: auto;
+    
 }
 
 #loja img {
