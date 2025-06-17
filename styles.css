@@ -4,9 +4,9 @@
 :root {
     --background-color: #FFECEE;
     --box-color: #FEFAFD;
-    --pink-color: #FEB9D6;
-    --tittle-color: #B3A16B;
-    --tittle-color2: #948558;
+    --pink-color: #d81d61;
+    --tittle-color: #948558;
+    --tittle-color2: #7f724b;
     --tittle-color3: #B3A16B;
     --border-color: #AE9A63;
     --border-color2: #B3A16B;
@@ -25,23 +25,21 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
     margin: 0;
     padding: 0;
-    width: 100%; 
+
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: var(--background-color);
     min-width: 320px;
 }
+
 nav#contato-info {
     width: 100%;
     height: 40px;
     text-align: center;
-
 }
 
 nav#contato-info a {
@@ -52,7 +50,7 @@ nav#contato-info a {
 }   
 
 header {
-    min-width: 300px;
+    min-width: 320px;
     max-width: 100%;
     height: 140px;
     margin: 10px auto;
@@ -73,10 +71,10 @@ header > #box-logo {
 
 header > #box-logo > h1 {
     font-family: var(--font-title);
-    font-size: 2.1em;
-    font-weight: 400;
+    font-size: 2.2em;
+    font-weight: 500;
     letter-spacing: 1px;
-    color: var(--tittle-color2);
+    color: var(--tittle-color);
     text-align: center;
     margin-top: 30px;
     margin-bottom: 5px;
@@ -87,7 +85,7 @@ header > #box-logo > h2 {
     font-size: 0.9em;
     font-weight: 500;
     font-style: normal;
-    color: var(--tittle-color);
+    color: var(--tittle-color2);
     text-align: center;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -99,26 +97,25 @@ main {
     min-width: 320px;
 }
 
-section {
-    width: 95%;
-    margin: auto;
-    text-align: center;
-}
-
 section h2 {
     font-family: var(--font-h2);
     font-size: 3em;
     font-weight: 400;
-    color: var(--tittle-color2);    
+    color: var(--tittle-color);    
 }
 
 section p {
     font-family: var(--font-body);
     font-size: 1.2em;
+    line-height: 1.3;
     color: var(--text-color);    
 }
 
 #boas-vindas {
+    width: 95%;
+    max-width: 342px;
+    margin: auto;
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -126,22 +123,22 @@ section p {
 .deco {
     display: block;
     margin: 0px auto;
-    width: 95%;
-    max-width: 200px;
+    max-width: 205px;
     padding: 0px;
 }
 
-#boas-vindas h2 {
+.text h2 {
     font-size: 3.9em;
     font-weight: 400;
     margin: 0px 0px;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
-#boas-vindas p {
+.text p {
     font-size: 1.5em;
     font-weight: 400;
     line-height: 1.5;
+    margin-top: 2px;
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 5px;
@@ -157,17 +154,93 @@ img.foto {
     margin: auto;
     text-align: center;
 }
+
+#flor1 {
+    display: block;
+    margin: 0 auto;
+    width: 85%;
+
+}
 section.card {
     background-color: var(--box-color);
     box-shadow:  6px 6px 9px rgba(0, 0, 0, 0.1);
     width: 95%;
     margin: auto;
-    
+    text-align: center;
 }
 
+#loja, #produtos {
+    border: double var(--border-color);
+    margin-top: 30px;
+}
+
+#loja > h2 {
+    padding: 25px 0px 0px 0px;
+} 
+
+#loja > p {
+    padding: 0px 20px;
+}
 #loja img {
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     max-width: 310px;
     min-width: 300px;
 }
+
+#local {
+    margin: auto;
+    text-align: center;
+    width: 95%;
+    max-width: 342px;
+    margin-top: 25px;
+}
+#local > p {
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}
+#local > address {
+    margin: 0px auto;
+    width: 85%;
+    padding-bottom: 10px;
+}
+
+#bolo-rosa {
+    margin-top: 25px;
+}
+
+#cardapio > h2 {
+    margin-bottom: 5px;
+    padding: 25px 0px 25px 0px;
+}
+
+#cardapio > p {
+    padding: 0px 20px;
+}
+
+#p-strong {
+    color: var(--tittle-color2);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+#cardapio > #p-lower {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+#lista-produtos > div {
+    display: inline-block;
+    border: 1px solid var(--border-color2);
+    text-align: center;
+}
+.produto > img {
+    width: 150px;
+    height: 150px;
+}
+.produto > p {
+    font-size: 1em;
+    max-width: 150px;
+}
+
