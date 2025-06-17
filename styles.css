@@ -230,17 +230,75 @@ section.card {
     margin-top: 10px;
 }
 
-#lista-produtos > div {
-    display: inline-block;
-    border: 1px solid var(--border-color2);
+#lista-produtos {
+    min-width: 300px;
+    max-width: 900px;
     text-align: center;
-}
-.produto > img {
-    width: 150px;
-    height: 150px;
-}
-.produto > p {
-    font-size: 1em;
-    max-width: 150px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+.produto {
+    width: 310px;
+    height: 400px;
+    margin: 0px auto;
+    padding-top: 3px;
+    border: 1px solid var(--border-color2);
+}
+
+.produto > h3 {
+    font-family: var(--font-subtitle);
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--pink-color);
+    margin: 5px;
+    padding: 3px;
+}
+
+.produto > p {
+    font-family: var(--font-body);
+    font-size: 0.9em;
+    line-height: normal;
+    font-style: italic;
+    color: var(--text-color);
+    margin: 5px;
+    padding: 0px;
+}
+
+.produto > img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+#flor2 {
+    display: block;
+    margin: 30px auto;
+    width: 85%;
+    max-width: 300px;
+}
+
+#delivery > h2 {
+    text-align: center;
+    padding: 25px 0px 0px 0px;
+} 
+
+#delivery > p {
+    text-align: center;
+    padding: 0px 20px;
+}
+
+#encomendas > h2 {
+    text-align: center;
+    padding: 25px 0px 0px 0px;
+} 
+
+#encomendas > p {
+    text-align: center;
+    padding: 0px 20px;
+}
