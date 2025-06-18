@@ -3,16 +3,12 @@
 
 :root {
     --background-color: #FFECEE;
+    --border-color: #AE9A63;
     --box-color: #FEFAFD;
     --pink-color: #d81d61;
     --tittle-color: #948558;
     --tittle-color2: #7f724b;
-    --tittle-color3: #B3A16B;
-    --border-color: #AE9A63;
-    --border-color2: #B3A16B;
-    --tittle-color3: #B3A16B;
-    --text-color: #333;
-    
+    --text-color: #333;    
 
     --font-title: "Italiana", sans-serif;
     --font-subtitle: "Quattrocento Sans", sans-serif;
@@ -201,6 +197,7 @@ section.card {
     margin-top: 25px;
 }
 #local > p {
+    color: var(--tittle-color2);
     padding: 0px 20px;
     margin-bottom: 10px;
 }
@@ -259,7 +256,7 @@ section.card {
     height: 400px;
     margin: 0px auto;
     padding: 5px 3px;
-    border: 1px solid var(--border-color2);
+    border: 1px solid var(--border-color);
 }
 
 .produto > h3 {
