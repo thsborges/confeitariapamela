@@ -5,10 +5,10 @@
     --background-color: #FFECEE;
     --border-color: #AE9A63;
     --box-color: #FEFAFD;
-    --pink-color: #d81d61;
+    --pink-color: #CC2982;
     --tittle-color: #948558;
     --tittle-color2: #7f724b;
-    --text-color: #333;    
+    --text-color: #251a11;    
 
     --font-title: "Italiana", sans-serif;
     --font-subtitle: "Quattrocento Sans", sans-serif;
@@ -32,6 +32,10 @@ body {
     min-width: 320px;
 }
 
+nav {
+    background-color: var(--pink-color);
+    color: var(--background-color);
+}
 nav#contato-info {
     width: 100%;
     height: 40px;
@@ -40,7 +44,8 @@ nav#contato-info {
 
 nav#contato-info a {
     display: inline-block;
-    color: white;
+    color: var(--background-color);
+    font-family: var(--font-footer);
     text-decoration: none;
     margin-top: 10px;
 }   
