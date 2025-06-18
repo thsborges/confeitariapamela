@@ -5,11 +5,12 @@
     --background-color: #FFECEE;
     --border-color: #AE9A63;
     --box-color: #FEFAFD;
-    --pink-color: #CC2982;
+    --pink-color: #bb016e;
     --tittle-color: #948558;
     --tittle-color2: #7f724b;
     --text-color: #251a11;
-    --text-footer: #F7F2F6;    
+    --text-footer: #F7F2F6;
+;    
 
     --font-title: "Italiana", sans-serif;
     --font-subtitle: "Quattrocento Sans", sans-serif;
@@ -341,4 +342,8 @@ footer {
     color: var(--text-footer);
     text-align: center;
     padding: 20px 0px;
+}
+
+footer > h2 {
+    border: 1px solid #aa8f66;
 }
