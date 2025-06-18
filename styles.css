@@ -8,13 +8,14 @@
     --pink-color: #CC2982;
     --tittle-color: #948558;
     --tittle-color2: #7f724b;
-    --text-color: #251a11;    
+    --text-color: #251a11;
+    --text-footer: #F7F2F6;    
 
     --font-title: "Italiana", sans-serif;
     --font-subtitle: "Quattrocento Sans", sans-serif;
     --font-h2: "Pinyon Script", serif;
     --font-body: "Quattrocento", serif;
-    --font-footer: "Work Sans", sans-serif; 
+    --font-footer: "Montserrat", sans-serif; 
 }
 
 * {
@@ -44,7 +45,7 @@ nav#contato-info {
 
 nav#contato-info a {
     display: inline-block;
-    color: var(--background-color);
+    color: var(--text-footer);
     font-family: var(--font-footer);
     text-decoration: none;
     margin-top: 10px;
@@ -329,4 +330,15 @@ section.card {
     max-width: 310px;
     min-width: 300px;
     margin: 0 auto;
+}
+
+footer {
+    font-family: var(--font-footer);
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    background-color: var(--pink-color);
+    color: var(--text-footer);
+    text-align: center;
+    padding: 20px 0px;
 }
