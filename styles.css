@@ -1,7 +1,12 @@
 @charset "UTF-8";
-/* CSS Document */
 
 :root {
+    --font-title: "Italiana", sans-serif;
+    --font-subtitle: "Quattrocento Sans", sans-serif;
+    --font-h2: "Pinyon Script", serif;
+    --font-body: "Quattrocento", serif;
+    --font-footer: "Montserrat", sans-serif;
+
     --background-color: #FFECEE;
     --border-color: #AE9A63;
     --box-color: #FEFAFD;
@@ -10,13 +15,6 @@
     --tittle-color2: #7f724b;
     --text-color: #251a11;
     --text-footer: #F7F2F6;
-;    
-
-    --font-title: "Italiana", sans-serif;
-    --font-subtitle: "Quattrocento Sans", sans-serif;
-    --font-h2: "Pinyon Script", serif;
-    --font-body: "Quattrocento", serif;
-    --font-footer: "Montserrat", sans-serif; 
 }
 
 * {
@@ -99,45 +97,33 @@ main {
     max-width: 1000px;
     min-width: 320px;
 }
-
+section {
+    width: 94%;
+    text-align: center;
+    margin: auto;
+}
 section h2 {
     font-family: var(--font-h2);
-    font-size: 3em;
-    font-weight: 400;
     color: var(--tittle-color);    
 }
 
 section p {
     font-family: var(--font-body);
-    font-size: 1.2em;
-    line-height: 1.3;
     color: var(--text-color);    
 }
 
-#boas-vindas {
-    width: 95%;
-    max-width: 342px;
-    margin: auto;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+section.no-card {
+    border: 1px solid black;
+    max-width: 90%;
 }
 
-.deco {
-    display: block;
-    margin: 0px auto;
-    max-width: 205px;
-    padding: 0px;
-}
-
-.text h2 {
+.no-card > h2 {
     font-size: 3.9em;
     font-weight: 400;
-    margin: 0px 0px;
     padding-top: 30px;
 }
 
-.text p {
+.no-card > p {
     font-size: 1.5em;
     font-weight: 400;
     line-height: 1.5;
@@ -146,6 +132,24 @@ section p {
     padding-right: 30px;
     padding-bottom: 5px;
 }
+
+#boas-vindas {
+    max-width: 350px;
+}
+section.card {
+
+}
+
+
+
+.deco {
+    display: block;
+    margin: 0px auto;
+    max-width: 205px;
+    padding: 0px;
+}
+
+
 
 img.foto {
     display: block;
@@ -196,24 +200,6 @@ section.card {
     padding: 4px;
 }
 
-#local {
-    margin: auto;
-    text-align: center;
-    width: 95%;
-    max-width: 342px;
-    margin-top: 25px;
-}
-#local > p {
-    color: var(--tittle-color2);
-    padding: 0px 20px;
-    margin-bottom: 10px;
-}
-#local > address {
-    margin: 0px auto;
-    width: 85%;
-    padding-bottom: 10px;
-}
-
 #bolo-rosa {
     margin-top: 40px;
 }
@@ -245,7 +231,7 @@ section.card {
 }
 
 #lista-produtos {
-    max-width: 95%;
+    width: 95%;
     min-width: 300px;
     max-width: 900px;
     text-align: center;
