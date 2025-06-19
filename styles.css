@@ -5,7 +5,7 @@
     --background-color: #FFECEE;
     --border-color: #AE9A63;
     --box-color: #FEFAFD;
-    --pink-color: #bb016e;
+    --pink-color: #CC2982;
     --tittle-color: #948558;
     --tittle-color2: #7f724b;
     --text-color: #251a11;
@@ -298,33 +298,21 @@ section.card {
 
 #flor2 {
     display: block;
-    margin: 30px auto;
+    margin: 40px auto;
     width: 85%;
     max-width: 300px;
 }
-
-#delivery > h2 {
+#delivery, #encomendas {
     text-align: center;
-    padding: 25px 0px 0px 0px;
-} 
+    margin: 50px auto;
+    max-width: 90%;
 
-#delivery > p {
-    text-align: center;
-    padding: 0px 20px;
 }
+
 #brownie {
     margin-top: 40px;
     max-width: 500px;
     min-width: 300px;
-}
-#encomendas > h2 {
-    text-align: center;
-    padding: 25px 0px 0px 0px;
-} 
-
-#encomendas > p {
-    text-align: center;
-    padding: 0px 20px;
 }
 
 #encomenda {
@@ -334,16 +322,28 @@ section.card {
 }
 
 footer {
+    margin-top: 50px;
+    padding: 10px 20px;
     font-family: var(--font-footer);
-    font-size: 1em;
-    font-weight: 300;
-    letter-spacing: 1.2px;
     background-color: var(--pink-color);
-    color: var(--text-footer);
-    text-align: center;
-    padding: 20px 0px;
 }
 
 footer > h2 {
-    border: 1px solid #aa8f66;
+    color: var(--text-footer);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+footer > p {
+    color: var(--text-footer);
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+footer > h3 {
+    color: var(--text-footer);
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-top: 10px;
 }
