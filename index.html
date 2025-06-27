@@ -17,11 +17,47 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Confeitaria Pamela Nardotto</title>
+    <style>
+        /* Menu Mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        flex-direction: column;
+        background: var(--box-color);
+        width: 70%;
+        height: 100vh;
+        padding-top: 4rem;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 1.5rem;
+        right: 0.5rem;
+        display: block;
+        z-index: 101;
+        color: var(--tittle-color2);
+        font-size: 1.8em;
+    }
+
+    .nav-menu a {
+        margin: 0.5rem 1rem;
+        padding: 1rem;
+        border-bottom: 1px solid var(--tittle-color2);
+    }
+}
+    </style>
 </head>
 <body>
-    <nav id="banner">
-        <p>SIGA NOSSO INSTAGRAM PARA <strong>NOVIDADES!</strong></p>
-    </nav>
+    <div id="banner-ifood">
+        <p>FAÇA AGORA SEU PEDIDO NO <a href="#">IFOOD</a></p>
+    </div>
 
     <header>
         <div id="box-logo">
@@ -29,6 +65,20 @@
             <h2>CONFEITARIA</h2>
         </div>       
     </header>
+
+    
+    <nav class="nav-container">
+        <button  class="menu-toggle">☰</button>
+        <div class="nav-menu">
+            <a href="#home">HOME</a>
+            <a href="#confeitaria">A CONFEITARIA</a>
+            <a href="#cardapio">DELÍCIAS DA CASA</a>
+            <a href="#delivery">DELIVERY</a>
+            <a href="#encomendas">ENCOMENDAS</a>
+            <a href="#contato">CONTATO</a>
+        </div>
+    </nav>
+    
     <main>
 
         <section class="no-card" id="boas-vindas">
@@ -197,6 +247,40 @@
             <p class="copyright">Confeitaria Pamela Nardotto &copy; 2023. Todos os direitos reservados.</p>
         </footer>
 
-    
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            // Alternar menu mobile
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Fechar menu ao clicar em um link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Scroll suave
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>    
 </body>
 </html>

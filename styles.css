@@ -12,7 +12,7 @@
     --box-color: #FEFAFD;
     --pink-color: #CC2982;
     --tittle-color: #AE9A63;
-    --tittle-color2: #AE9A63;
+    --tittle-color2: #7e6f48;
     --text-color: #251a11;
     --text-footer: #F7F2F6;
 }
@@ -28,30 +28,36 @@ body {
     min-width: 320px;
 }
 
-nav {
+#banner-ifood {
     background-color: var(--pink-color);
     color: var(--background-color);
-}
-nav#banner {
     width: 100%;
-    height: 25px;
-
+    height: 26px;
 }
 
-nav#banner > p {
+#banner-ifood > p {
     text-align: center;
-    color: var(--background-color);
+    color: var(--box-color);
     font-family: var(--font-footer);
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 400;
     padding-top: 5px;
-
-
 }   
+
+#banner-ifood > p > a {
+    text-decoration: none;
+    color: var(--box-color);
+    font-weight: 700;
+}
+
+#banner-ifood > p > a:hover {
+    color: var(--tittle-color);
+}
 
 header {
     min-width: 320px;
     max-width: 100%;
-    height: 250px;
+    height: 200px;
     margin: 0px auto;
     position: relative;       
 }
@@ -64,7 +70,7 @@ header > #box-logo {
     border: 1px solid var(--border-color);
     width: 95%;
     min-width: 320px;
-    max-width: 420px;
+    max-width: 400px;
     height: 120px;
 }
 
@@ -84,10 +90,44 @@ header > #box-logo > h2 {
     font-size: 0.9em;
     font-weight: 500;
     font-style: normal;
-    color: var(--tittle-color2);
+    color: var(--tittle-color);
     text-align: center;
     margin-top: 0px;
     margin-bottom: 20px;
+}
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    min-width: 320px;
+    height: 51px;
+    margin: 0 auto;
+          
+}
+.nav-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: var(--tittle-color2);
+}
+.nav-menu a:hover {
+    color: var(--tittle-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 main {
