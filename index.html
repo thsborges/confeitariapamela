@@ -26,6 +26,7 @@
         left: -100%;
         flex-direction: column;
         background: var(--box-color);
+        opacity: 0.98;
         width: 70%;
         height: 100vh;
         padding-top: 4rem;
@@ -34,12 +35,13 @@
 
     .nav-menu.active {
         left: 0;
+        z-index: 1001;
     }
 
     .menu-toggle {
         position: absolute;
-        top: 1.5rem;
-        right: 0.5rem;
+        top: 2.5rem;
+        right: 1.5rem;
         display: block;
         z-index: 101;
         color: var(--tittle-color2);
@@ -52,6 +54,65 @@
         border-bottom: 1px solid var(--tittle-color2);
     }
 }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 1100px) {
+            .carousel-container {
+                max-width: 1000px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .carousel {
+                height: 400px;
+            }
+            
+            .img-title {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .carousel {
+                height: 300px;
+            }
+            
+            .img-overlay {
+                padding: 15px;
+            }
+            
+            .img-title {
+                font-size: 1.2rem;
+            }
+            
+            .img-description {
+                font-size: 0.85rem;
+            }
+            
+            .indicator {
+                width: 12px;
+                height: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -60,10 +121,8 @@
     </div>
 
     <header>
-        <div id="box-logo">
-            <h1>PAMELA NARDOTTO</h1>
-            <h2>CONFEITARIA</h2>
-        </div>       
+        <h1>PAMELA NARDOTTO</h1>
+        <p>CONFEITARIA</p>       
     </header>
 
     
@@ -78,8 +137,57 @@
             <a href="#contato">CONTATO</a>
         </div>
     </nav>
-    
+
     <main>
+        <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="imagens/banoffe.jpg" alt="torta-banoffe">
+                <div class="img-overlay">
+                    <h2 class="img-title"></h2>
+                    <p class="img-description"></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/bolinho-chuva.jpg" alt="Praia tropical">
+                <div class="img-overlay">
+                    <h2 class="img-title"></h2>
+                    <p class="img-description"></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/brownie-sorvete2.jpg" alt="Floresta nevada">
+                <div class="img-overlay">
+                    <h2 class="img-title"></h2>
+                    <p class="img-description"></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/empadao-salada.jpg" alt="Nevoeiro na floresta">
+                <div class="img-overlay">
+                    <h2 class="img-title"></h2>
+                    <p class="img-description"></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/torta-morango.jpg" alt="Deserto">
+                <div class="img-overlay">
+                    <h2 class="img-title"></h2>
+                    <p class="img-description"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+            <div class="indicator" data-index="3"></div>
+            <div class="indicator" data-index="4"></div>
+        </div>
+    </div>
+
+    
 
         <section class="no-card" id="boas-vindas">
          
@@ -91,9 +199,9 @@
          <img class="ornamento-down" src="imagens/ornamento-down.png" alt="ornamento decoração">
          
         </section>
-
+        <!--
         <img class="foto" src="imagens/waffle-com-sorvete1000x650.jpg" alt="waffle com sorvete">
-        <img id="flor1" src="imagens/flores-down.png" alt="decoração flores">  
+        <img id="flor1" src="imagens/flores-down.png" alt="decoração flores">  -->
 
         <section class="card" id="confeitaria">
          <h2>A Confeitaria</h2> 
@@ -282,5 +390,66 @@
             });
         });
     </script>    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            const totalItems = document.querySelectorAll('.carousel-item').length;
+            let autoSlideInterval;
+            
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Atualiza indicadores
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                updateCarousel();
+            }
+            
+            // Event listeners para indicadores
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = parseInt(indicator.getAttribute('data-index'));
+                    updateCarousel();
+                    resetAutoSlide();
+                });
+            });
+            
+            // Inicia auto avanço do carrossel
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 8000);
+            }
+            
+            // Reseta o intervalo quando o usuário interage
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            // Inicia o carrossel
+            startAutoSlide();
+            
+            // Pausa o carrossel quando o mouse está sobre ele
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            // Retoma o carrossel quando o mouse sai
+            carousel.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+        });
+    </script>
 </body>
 </html>
