@@ -153,6 +153,38 @@ main {
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Setas do carrossel */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: var(--pink-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 15px;
+    z-index: 10;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.prev-arrow {
+    left: 15px;
+}
+
+.next-arrow {
+    right: 15px;
+}
 
 .carousel {
     display: flex;
@@ -761,6 +793,10 @@ footer > .copyright {
     
     .nav-menu a::after {
         background: var(--box-color);
+    }
+
+    .carousel-arrow {
+        display: none; /* Esconde setas em mobile */
     }
 }
 
