@@ -3,60 +3,735 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Confeitaria Pamela Nardotto - Delícias feitas com amor e carinho! Bolos, doces, salgados e muito mais. Venha nos visitar em Osasco!">
-    <meta name="keywords" content="confeitaria, bolos, doces, banoffe, coxinha, salgados, Osasco, delivery, encomendas, brunch, café da tarde">
-    <meta name="author" content="Confeitaria Pamela Nardotto">
-    <meta name="additional-info" content="Confeitaria Pamela Nardotto - Rua Francisco Lameu, 421, Bela Vista, Osasco - SP. Aberto de Terça a Domingo, das 10h às 19h (Domingos, meio-dia). Delivery disponível pelo Ifood. Encomendas pelo WhatsApp.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Quattrocento+Sans:wght@400;700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Confeitaria Pamela Nardotto</title>
     <style>
-        /* Menu Mobile */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        flex-direction: column;
-        background: var(--box-color);
-        opacity: 0.98;
-        width: 70%;
-        height: 100vh;
-        padding-top: 4rem;
-        transition: left 0.3s ease;
-    }
+        :root {
+            --font-title: "Italiana", sans-serif;
+            --font-subtitle: "Quattrocento Sans", sans-serif;
+            --font-h2: "Pinyon Script", serif;
+            --font-body: "Quattrocento", serif;
+            --font-footer: "Montserrat", sans-serif;
+            --background-color: #FFECEE;
+            --border-color: #AE9A63;
+            --box-color: #FEFAFD;
+            --pink-color: #CC2982;
+            --tittle-color: #AE9A63;
+            --tittle-color2: #7e6f48;
+            --text-color: #251a11;
+            --text-footer: #F7F2F6;
+            --transition: all 0.3s ease;
+        }
 
-    .nav-menu.active {
-        left: 0;
-        z-index: 1001;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .menu-toggle {
-        position: absolute;
-        top: 2.5rem;
-        right: 1.5rem;
-        display: block;
-        z-index: 101;
-        color: var(--tittle-color2);
-        font-size: 1.8em;
-    }
+        body {
+            background-color: var(--background-color);
+            min-width: 320px;
+            font-family: var(--font-body);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
 
-    .nav-menu a {
-        margin: 0.5rem 1rem;
-        padding: 1rem;
-        border-bottom: 1px solid var(--tittle-color2);
-    }
-}
+        #banner-ifood {
+            background-color: var(--pink-color);
+            color: var(--background-color);
+            width: 100%;
+            height: 26px;
+            position: relative;
+        }
+
+        #banner-ifood > p {
+            text-align: center;
+            color: var(--box-color);
+            font-family: var(--font-footer);
+            font-size: 13px;
+            font-weight: 400;
+            padding-top: 5px;
+        }   
+
+        #banner-ifood > p > a {
+            text-decoration: none;
+            color: var(--box-color);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        #banner-ifood > p > a:hover {
+            color: var(--tittle-color);
+        }
+
+        header {
+            min-width: 320px;
+            max-width: 100%;
+            margin: 0px auto;
+            padding: 60px 0px 30px 0px;      
+            position: relative;
+            text-align: center;
+        }
+
+        header > h1 {
+            font-family: var(--font-title);
+            font-size: 2.2em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--tittle-color);
+            margin-bottom: 5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        header > h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: var(--tittle-color);
+        }
+
+        header > p {
+            font-family: var(--font-subtitle);
+            font-size: 0.9em;
+            font-weight: 500;
+            font-style: normal;
+            color: var(--tittle-color);
+        }
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            min-width: 320px;
+            height: 51px;
+            margin: 0 auto;
+                  
+        }
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-family: var(--font-body);
+            font-size: 1em;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--tittle-color2);
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+        .nav-menu a:hover {
+            color: var(--tittle-color);
+        }
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--tittle-color);
+            transition: var(--transition);
+        }
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        main {
+            margin: auto;
+            max-width: 1000px;
+            min-width: 320px;
+        }
+
+        .carousel-container {
+            max-width: 1080px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .carousel {
+            display: flex;
+            height: 500px;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            padding: 100px 25px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .img-title {
+            font-family: var(--font-h2);
+            color: var(--box-color);
+            font-size: 2.8rem;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        .img-description {
+            font-size: 1.2rem;
+            max-width: 80%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .indicator:hover {
+            transform: scale(1.2);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .indicator.active {
+            background-color: white;
+            transform: scale(1.2);
+            border-color: var(--pink-color);
+        }
+
+        section {
+            width: 94%;
+            text-align: center;
+            margin: 30px auto;
+            padding: 30px 20px;
+        }
+
+        section h2 {
+            font-family: var(--font-h2);
+            color: var(--tittle-color);
+            font-size: 2.5em;
+            font-weight: 400;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--tittle-color);
+        }
+        
+        section p {
+            font-family: var(--font-body);
+            color: var(--text-color);   
+            font-size: 1.1em;
+            font-weight: 300;
+            line-height: 1.3em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding: 0px; 
+        }
+
+        .ornamento-up {
+            display: block;
+            max-width: 205px;
+            margin: 0px auto 20px auto;
+            padding: 0px;
+            opacity: 0.7;
+        }
+
+        .ornamento-down {
+            display: block;
+            max-width: 205px;
+            margin: 30px auto 0px auto;
+            padding: 0px;
+            opacity: 0.7;
+        }
+
+        #boas-vindas {
+            max-width: 420px;
+            font-size: 1.2em;
+            animation: fadeIn 1s ease;
+        }
+
+        img.foto {
+            display: block;
+            border: 1px solid var(--border-color);
+            padding: 5px;
+            width: 94%;
+            min-width: 300px;
+            max-width: 1000px;
+            margin: 50px auto;
+            margin-bottom: 0px;
+            border-radius: 4px;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        img.foto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        #flor1 {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 200px;
+        }
+        
+        section.card {
+            background-color: var(--box-color);
+            border: double var(--border-color);
+            box-shadow:  6px 6px 9px rgba(0, 0, 0, 0.1);
+            width: 95%;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 8px;
+            padding: 40px 25px;
+            transition: var(--transition);
+        }
+
+        section.card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        section.card > h2 {
+            font-size: 2.3em;
+        }
+
+        section.card > p {
+            font-size: 1em;
+            line-height: 1.4em;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        #confeitaria > img {
+            display: block;
+            margin: 30px auto 0px auto;
+            width: 98%;
+            max-width: 295px;
+            min-width: 250px;
+            border: 1px solid var(--border-color);
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        address {
+            font-family: var(--font-body);
+            font-size: 1em;
+            color: var(--text-color);
+            margin: 20px auto;
+            font-style: normal;
+        }
+
+        #bolo-rosa {
+            margin-top: 40px;
+        }
+
+        #p-strong {
+            color: var(--tittle-color2);
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #cardapio > #p-lower {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        #lista-produtos {
+            width: 94%;
+            min-width: 250px;
+            max-width: 900px;
+            text-align: center;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .produto {
+            display: block;
+            max-width: 300px;
+            min-width: 280px;
+            height: 400px;
+            margin: 0px auto;
+            padding: 15px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--box-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .produto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .produto > h3 {
+            font-family: var(--font-subtitle);
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--pink-color);
+            margin: 10px 5px;
+            padding: 3px;
+        }
+
+        .produto > p {
+            font-family: var(--font-body);
+            font-size: 0.9em;
+            line-height: 1.4;
+            font-style: italic;
+            color: var(--text-color);
+            margin: 10px 5px;
+            padding: 0px;
+        }
+
+        .produto > img {
+            width: 98%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .produto:hover img {
+            transform: scale(1.03);
+        }
+
+        #flor2 {
+            display: block;
+            margin: 40px auto;
+            width: 85%;
+            max-width: 300px;
+            opacity: 0.7;
+        }
+
+        #brownie {
+            margin-top: 40px;
+            max-width: 500px;
+            min-width: 300px;
+        }
+
+        #encomendas {
+            position: relative;
+        }
+
+        #encomenda {
+            max-width: 310px;
+            min-width: 250px;
+            margin: 30px auto;
+            border-radius: 8px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-footer);
+            font-weight: 600;
+            margin-top: 15px;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-ifood {
+            display: inline-block;
+            background-color: #ea1d2c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: var(--font-footer);
+            font-weight: 600;
+            margin: 20px 0;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-ifood:hover {
+            background-color: #c31420;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 10px 10px 20px;
+            font-family: var(--font-footer);
+            background-color: var(--pink-color);
+            position: relative;
+        }
+
+        footer > p {
+            color: var(--text-footer);
+            font-size: 0.9em;
+            font-weight: 400;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        #footer-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1000px;
+            min-width: 320px;
+            margin: auto;
+        }
+        
+        .contato-box > h2 {
+            color: var(--text-footer);
+            font-size: 1.4em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .contato-info-box {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            max-width: 260px;
+            min-width: 250px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .contato-info-box > img {
+            width: 35px;
+            height: 25px;
+            padding-right: 10px;
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .text > h3 {
+            color: var(--text-footer);
+            font-size: 1em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .text > address {
+            font-family: var(--font-footer);
+            color: var(--text-footer);
+            font-style: normal;
+            font-size: 0.9em;
+            font-weight: 200;
+            margin: 0px;
+            line-height: 1.4;
+        }
+
+        .text > p {
+            font-family: var(--font-footer);
+            color: var(--text-footer);
+            font-style: normal;
+            font-size: 0.9em;
+            font-weight: 200;
+            margin: 0px;
+        }
+
+        .social-box > h2 {
+            color: var(--text-footer);
+            font-size: 1.4em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin: 15px 0px;
+        }
+        
+        .social-links {
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links > a {
+            text-decoration: none;
+            margin: 0px auto;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .social-links > a:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-links > a > img {
+            width: 40px;
+            height: 40px;
+            transition: var(--transition);
+        }
+
+        .social-links > a:hover img {
+            filter: brightness(1.2);
+        }
+
+        footer > .copyright {
+            color: var(--text-footer);
+            font-size: 0.7em;
+            font-weight: 200;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .sobre-box{
+            max-width: 260px;
+            min-width: 250px;
+            margin-bottom: 15px;
+        }
+        
+        .sobre-box > h2 {
+            color: var(--text-footer);
+            font-size: 1.4em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin: 15px 0px;
+        }
+
+        .sobre-box > p {
+            font-family: var(--font-footer);
+            color: var(--text-footer);
+            font-style: normal;
+            font-size: 0.9em;
+            font-weight: 200;
+            margin: 0px;
+            line-height: 1.4;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .whatsapp-float i {
+            color: white;
+            font-size: 34px;
+        }
 
         /* Animações */
         @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -65,7 +740,64 @@
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
+        /* Menu Mobile */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                flex-direction: column;
+                background: var(--pink-color);
+                opacity: 0.98;
+                width: 70%;
+                height: 100vh;
+                padding-top: 4rem;
+                transition: left 0.3s ease;
+                z-index: 100;
+                justify-content: flex-start;
+            }
+
+            .nav-menu.active {
+                left: 0;
+                z-index: 1001;
+            }
+
+            .menu-toggle {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                display: block;
+                z-index: 101;
+                color: white;
+                font-size: 1.8em;
+                background: rgba(0,0,0,0.2);
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-menu a {
+                margin: 0.5rem 1rem;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                color: white;
+                font-size: 1.2rem;
+                width: 80%;
+            }
+            
+            .nav-menu a:hover {
+                color: var(--box-color);
+            }
+            
+            .nav-menu a::after {
+                background: var(--box-color);
+            }
+        }
+
         /* Responsividade */
         @media (max-width: 1100px) {
             .carousel-container {
@@ -86,8 +818,49 @@
                 height: 400px;
             }
             
+            .img-overlay {
+                padding: 50px 20px;
+                width: 100%;
+                background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            }
+            
             .img-title {
-                font-size: 1.4rem;
+                font-size: 2rem;
+            }
+            
+            .img-description {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+            
+            .carousel-indicators {
+                bottom: 10px;
+            }
+            
+            .indicator {
+                width: 10px;
+                height: 10px;
+            }
+            
+            #lista-produtos {
+                gap: 15px;
+            }
+            
+            .produto {
+                max-width: 100%;
+                height: auto;
+                padding: 20px 15px;
+            }
+            
+            .produto img {
+                height: 200px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
             }
         }
         
@@ -97,11 +870,11 @@
             }
             
             .img-overlay {
-                padding: 15px;
+                padding: 30px 15px;
             }
             
             .img-title {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             
             .img-description {
@@ -109,8 +882,27 @@
             }
             
             .indicator {
-                width: 12px;
-                height: 12px;
+                width: 8px;
+                height: 8px;
+            }
+            
+            section.card {
+                padding: 25px 15px;
+            }
+            
+            .contato-box, .social-box, .sobre-box {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+            
+            #footer-box {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .contato-info-box {
+                justify-content: center;
             }
         }
     </style>
@@ -125,9 +917,8 @@
         <p>CONFEITARIA</p>       
     </header>
 
-    
     <nav class="nav-container">
-        <button  class="menu-toggle">☰</button>
+        <button class="menu-toggle">☰</button>
         <div class="nav-menu">
             <a href="#home">HOME</a>
             <a href="#confeitaria">A CONFEITARIA</a>
@@ -140,79 +931,66 @@
 
     <main>
         <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="imagens/banoffe.jpg" alt="torta-banoffe">
-                <div class="img-overlay">
-                    <h2 class="img-title"></h2>
-                    <p class="img-description"></p>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="imagens/banoffe.jpg" alt="torta-banoffe">
+                    <div class="img-overlay">
+                        <h2 class="img-title">Torta Banoffe</h2>
+                        <p class="img-description">Deliciosa torta com banana, doce de leite e chocolate.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/bolinho-chuva.jpg" alt="Bolinho de Chuva">
+                    <div class="img-overlay">
+                        <h2 class="img-title">Bolinho de Chuva</h2>
+                        <p class="img-description">Tradicional bolinho de chuva com doce de leite.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/brownie-sorvete2.jpg" alt="Brownie com Sorvete">
+                    <div class="img-overlay">
+                        <h2 class="img-title">Brownie com Sorvete</h2>
+                        <p class="img-description">Brownie quentinho com sorvete de creme e calda de chocolate.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/empadao-salada.jpg" alt="Empadão com Salada">
+                    <div class="img-overlay">
+                        <h2 class="img-title">Empadão com Salada</h2>
+                        <p class="img-description">Empadão caseiro com salada fresca.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/torta-morango.jpg" alt="Torta de Morango">
+                    <div class="img-overlay">
+                        <h2 class="img-title">Torta de Morango</h2>
+                        <p class="img-description">Torta de morango com creme e calda.</p>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="imagens/bolinho-chuva.jpg" alt="Praia tropical">
-                <div class="img-overlay">
-                    <h2 class="img-title"></h2>
-                    <p class="img-description"></p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="imagens/brownie-sorvete2.jpg" alt="Floresta nevada">
-                <div class="img-overlay">
-                    <h2 class="img-title"></h2>
-                    <p class="img-description"></p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="imagens/empadao-salada.jpg" alt="Nevoeiro na floresta">
-                <div class="img-overlay">
-                    <h2 class="img-title"></h2>
-                    <p class="img-description"></p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="imagens/torta-morango.jpg" alt="Deserto">
-                <div class="img-overlay">
-                    <h2 class="img-title"></h2>
-                    <p class="img-description"></p>
-                </div>
+            
+            <div class="carousel-indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+                <div class="indicator" data-index="3"></div>
+                <div class="indicator" data-index="4"></div>
             </div>
         </div>
-        
-        <div class="carousel-indicators">
-            <div class="indicator active" data-index="0"></div>
-            <div class="indicator" data-index="1"></div>
-            <div class="indicator" data-index="2"></div>
-            <div class="indicator" data-index="3"></div>
-            <div class="indicator" data-index="4"></div>
-        </div>
-    </div>
-
-    
 
         <section class="no-card" id="boas-vindas">
-         
-         <img class="ornamento-up" src="imagens/ornamento-up.png" alt="ornamento decoração">
-         
-         <h2>Bem-vindo</h2>
-         <p>Descubra nossas delícias, feitas com muito amor e carinho.</p>
-         
-         <img class="ornamento-down" src="imagens/ornamento-down.png" alt="ornamento decoração">
-         
+            <img class="ornamento-up" src="imagens/ornamento-up.png" alt="ornamento decoração">
+            <h2>Bem-vindo</h2>
+            <p>Descubra nossas delícias, feitas com muito amor e carinho.</p>
+            <img class="ornamento-down" src="imagens/ornamento-down.png" alt="ornamento decoração">
         </section>
-        <!--
-        <img class="foto" src="imagens/waffle-com-sorvete1000x650.jpg" alt="waffle com sorvete">
-        <img id="flor1" src="imagens/flores-down.png" alt="decoração flores">  -->
 
         <section class="card" id="confeitaria">
-         <h2>A Confeitaria</h2> 
-
-         <p>Localizada no bairro Bela Vista, em Osasco, a Confeitaria Pamela Nardotto é um espaço charmoso e acolhedor! Com decoração de "casinha de boneca", é o lugar perfeito para registrar momentos especiais ou uma pausa doce no seu dia.</p>
-
-         <p>Tudo em uma atmosfera aconchegante e super instagramável.</p>
-
-         <p>Funcionamos de terça a sábado, das 10h às 19h, e aos domingos a partir do meio-dia. Visite-nos e descubra a doçura da vida!</p>
-            
-         <img src="imagens/fachada.webp" alt="Fachada da Confeitaria Pamela Nardotto">
+            <h2>A Confeitaria</h2> 
+            <p>Localizada no bairro Bela Vista, em Osasco, a Confeitaria Pamela Nardotto é um espaço charmoso e acolhedor! Com decoração de "casinha de boneca", é o lugar perfeito para registrar momentos especiais ou uma pausa doce no seu dia.</p>
+            <p>Tudo em uma atmosfera aconchegante e super instagramável.</p>
+            <p>Funcionamos de terça a sábado, das 10h às 19h, e aos domingos a partir do meio-dia. Visite-nos e descubra a doçura da vida!</p>
+            <img src="imagens/fachada.webp" alt="Fachada da Confeitaria Pamela Nardotto">
         </section>
 
         <section class="no-card" id="local">
@@ -226,49 +1004,46 @@
         <img id="flor1" src="imagens/flores-down2.png" alt="decoração flores">
 
         <section class="card" id="cardapio">
-         <h2>Delícias da Casa</h2>
-         <img class="ornamento-up" src="imagens/ornamento-up.png" alt="ornamento decoração">
-         <p id="p-strong">Um cardápio diversificado para todos os tipos de fome!</p> 
-        
-         <p id="p-lower">Preparado com ingredientes de alta qualidade, sempre com novidades:</p>
+            <h2>Delícias da Casa</h2>
+            <img class="ornamento-up" src="imagens/ornamento-up.png" alt="ornamento decoração">
+            <p id="p-strong">Um cardápio diversificado para todos os tipos de fome!</p> 
+            <p id="p-lower">Preparado com ingredientes de alta qualidade, sempre com novidades:</p>
             <div id="lista-produtos">   
-
                 <div class="produto">
-                <img src="imagens/bolo-cenoura.jpg" alt="Bolo de cenoura com cobertura de chocolate e granulado">
-                <h3>Bolos Artesanais</h3>
-                <p>Deliciosos bolos saem do forno todos os dias! Brigadeiro, Red Velvet, o tradicional bolo de cenoura e novidades cada semana.</p>
+                    <img src="imagens/bolo-cenoura.jpg" alt="Bolo de cenoura com cobertura de chocolate e granulado">
+                    <h3>Bolos Artesanais</h3>
+                    <p>Deliciosos bolos saem do forno todos os dias! Brigadeiro, Red Velvet, o tradicional bolo de cenoura e novidades cada semana.</p>
                 </div>
             
                 <div class="produto">
-                <img src="imagens/coxinha.jpg" alt="Coxinha de frango super crocante acompanhada de suco natural">
-                <h3>Clássicos com Alma</h3>
-                <p>Empadão caseiro, pão de queijo fresquinho, tortas salgadas e a melhor e mais crocante <strong>coxinha</strong> de Osasco!</p>
+                    <img src="imagens/coxinha.jpg" alt="Coxinha de frango super crocante acompanhada de suco natural">
+                    <h3>Clássicos com Alma</h3>
+                    <p>Empadão caseiro, pão de queijo fresquinho, tortas salgadas e a melhor e mais crocante <strong>coxinha</strong> de Osasco!</p>
                 </div>
 
                 <div class="produto">
-                <img src="imagens/torta-banoffe.jpg" alt="Torta Banoffe com banana, doce de leite e cobertura de chocolate">
-                <h3>Doces &amp; Sobremesas</h3>
-                <p>Brigadeiros Gourmet, brownie cremoso e quentinho com sorvete, cookies, tortas doces, a nossa famosa <strong>Torta Banoffe</strong> — <em>e muito mais!</em></p>
+                    <img src="imagens/torta-banoffe.jpg" alt="Torta Banoffe com banana, doce de leite e cobertura de chocolate">
+                    <h3>Doces &amp; Sobremesas</h3>
+                    <p>Brigadeiros Gourmet, brownie cremoso e quentinho com sorvete, cookies, tortas doces, a nossa famosa <strong>Torta Banoffe</strong> — <em>e muito mais!</em></p>
                 </div>
             
                 <div class="produto">
-                <img src="imagens/panqueca-americana.jpg" alt="Quatro Panquecas americana com morango e mel">
-                <h3>Experiências Únicas</h3> 
-                <p>Fondue cremoso, bolinho de chuva de vó com doce de leite e deliciosas panquecas americanas.</p>
+                    <img src="imagens/panqueca-americana.jpg" alt="Quatro Panquecas americana com morango e mel">
+                    <h3>Experiências Únicas</h3> 
+                    <p>Fondue cremoso, bolinho de chuva de vó com doce de leite e deliciosas panquecas americanas.</p>
                 </div>  
          
                 <div class="produto">
-                <img src="imagens/torta-frango.jpg" alt="Torta de frango com salada de folhas verdes, tomate e queijo acompanhada de molho">
-                <h3>Almoço &amp; Jantar</h3>
-                <p>Sopas para os dias frios, lasanha e a mais pedida: Torta de Frango generosa com salada fresquinha!</p>
+                    <img src="imagens/torta-frango.jpg" alt="Torta de frango com salada de folhas verdes, tomate e queijo acompanhada de molho">
+                    <h3>Almoço &amp; Jantar</h3>
+                    <p>Sopas para os dias frios, lasanha e a mais pedida: Torta de Frango generosa com salada fresquinha!</p>
                 </div>
 
                 <div class="produto">
-                <img src="imagens/suco.jpg" alt="Suco natural de laranja e morango com gelo">
-                <h3>Bebidas Especiais</h3>
-                <p>Cafés especiais, sucos naturais, milkshakes irresistíveis e a nossa famosa Soda Italiana de vários sabores!</p>
+                    <img src="imagens/suco.jpg" alt="Suco natural de laranja e morango com gelo">
+                    <h3>Bebidas Especiais</h3>
+                    <p>Cafés especiais, sucos naturais, milkshakes irresistíveis e a nossa famosa Soda Italiana de vários sabores!</p>
                 </div>
-                
             </div>
             <img class="ornamento-down" src="imagens/ornamento-down.png" alt="ornamento decoração">
         </section>
@@ -279,27 +1054,24 @@
             <h2>Delivery</h2>
             <p>Também temos opção de delivery!</p>
             <p>Faça seu pedido pelo <strong>Ifood</strong> e receba nossas delícias diretamente na sua porta. Aproveite!</p>
-            <img src="#" alt="botão Ifood">
+            <a href="#" class="btn-ifood">Pedir no Ifood</a>
         </section>
         
         <img class="foto" id="brownie" src="imagens/brownie-sorvete.jpg" alt="brownie de chocolate com sorvete e calda de chocolate">
 
         <section class="no-card" id="encomendas">
             <h2>Encomendas</h2>
-        
             <p>Aceitamos encomendas de bolos, doces e salgados para festas, eventos e celebrações especiais!</p>
             <p>Entre em contato pelo nosso WhatsApp para mais informações e consulte disponibilidade.</p>
-
+            <a href="https://wa.me/5511999999999" class="btn-whatsapp">Encomendar pelo WhatsApp</a>
             <img class="foto" id="encomenda" src="imagens/brigadeiros.jpg" alt="brigadeiros gourmet variados">
-
         </section>
     </main>
 
-    <footer>
+    <footer id="contato">
         <div id="footer-box">
             <div class="contato-box">
                 <h2>CONTATO</h2>
-            
                 <div class="contato-info-box">
                     <img class="icon" src="imagens/pino-de-localizacao.png" alt="ícone de gps">
                     <div class="text">
@@ -321,8 +1093,6 @@
                         <address>11 99999-9999</address>
                     </div>
                 </div>
-            
-
                 <div class="contato-info-box">
                     <img class="icon" src="imagens/entrega.png" alt="ícone de entregador de moto"> 
                     <div class="text">
@@ -334,7 +1104,6 @@
 
             <div class="social-box">
                 <h2>REDES SOCIAIS</h2>
-                
                 <div class="social-links">
                     <a href="https://www.instagram.com/confeitariapamelanardotto/" target="_blank" rel="noopener noreferrer">
                         <img src="imagens/instagram.png" alt="Instagram da Confeitaria Pamela Nardotto">
@@ -352,10 +1121,14 @@
                 <p>Pamela Nardotto é a criadora e alma da confeitaria. Sempre em busca de novas receitas e técnicas para manter o cardápio fresco, criativo e surpreendente.</p>
             </div>
         </div>
-            <p class="copyright">Confeitaria Pamela Nardotto &copy; 2023. Todos os direitos reservados.</p>
-        </footer>
+        <p class="copyright">Confeitaria Pamela Nardotto &copy; 2023. Todos os direitos reservados.</p>
+    </footer>
 
-<script>
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
@@ -363,6 +1136,7 @@
             // Alternar menu mobile
             menuToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
+                this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
             });
             
             // Fechar menu ao clicar em um link
@@ -371,6 +1145,7 @@
                 link.addEventListener('click', function() {
                     if (window.innerWidth <= 768) {
                         navMenu.classList.remove('active');
+                        menuToggle.textContent = '☰';
                     }
                 });
             });
@@ -383,7 +1158,7 @@
                     const targetSection = document.querySelector(targetId);
                     
                     window.scrollTo({
-                        top: targetSection.offsetTop,
+                        top: targetSection.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 });
@@ -428,7 +1203,7 @@
             
             // Inicia auto avanço do carrossel
             function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 8000);
+                autoSlideInterval = setInterval(nextSlide, 5000);
             }
             
             // Reseta o intervalo quando o usuário interage
