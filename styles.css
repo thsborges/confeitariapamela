@@ -334,7 +334,7 @@ section.card:hover {
 }
 
 section.card > h2 {
-    font-size: 2.3em;
+    font-size: 2.5em;
 }
 
 section.card > p {
@@ -677,6 +677,7 @@ footer > .copyright {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    text-decoration: none
 }
 
 .whatsapp-float:hover {
@@ -687,6 +688,7 @@ footer > .copyright {
 .whatsapp-float i {
     color: white;
     font-size: 34px;
+    text-decoration: none;
 }
 
 /* Animações */
