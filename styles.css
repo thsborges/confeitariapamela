@@ -419,6 +419,26 @@ address {
     font-style: normal;
 }
 
+.btn-pagina {
+    display: inline-block;
+    background-color: var(--pink-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--font-footer);
+    font-weight: 600;
+    margin: 20px 0;
+    transition: var(--transition);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pagina:hover {
+    background-color: #911c5c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
 #bolo-rosa {
     margin-top: 40px;
 }
@@ -527,48 +547,6 @@ address {
     margin: 30px auto;
     border-radius: 8px;
 }
-
-.btn-ifood {
-    display: inline-block;
-    background-color: var(--pink-color);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: var(--font-footer);
-    font-weight: 600;
-    margin: 20px 0;
-    transition: var(--transition);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-ifood:hover {
-    background-color: #911c5c;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-}
-
-.btn-whatsapp {
-    display: inline-block;
-    background-color: var(--pink-color);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: var(--font-footer);
-    font-weight: 600;
-    margin-top: 15px;
-    transition: var(--transition);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-whatsapp:hover {
-    background-color: #911c5c;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-}
-
-
 
 footer {
     margin-top: 50px;
@@ -684,6 +662,7 @@ footer > p {
     filter: brightness(1.2);
 }
 
+
 footer > .copyright {
     color: var(--text-footer);
     font-size: 0.7em;
@@ -716,6 +695,15 @@ footer > .copyright {
     font-weight: 200;
     margin: 0px;
     line-height: 1.4;
+}
+.contato-info-box > a {
+    text-decoration: none;
+    color: var(--text-footer);
+    transition: color 0.3s;
+}
+
+.contato-info-box > a:hover {
+    color: var(--border-color) !important;
 }
 
 .whatsapp-float {
@@ -789,8 +777,8 @@ footer > .copyright {
 
     .menu-toggle {
         position: fixed;
-        top: 30px;
-        right: 15px;
+        top: 17px;
+        right: 10px;
         display: block;
         z-index: 101;
         color: var(--tittle-color2);
