@@ -26,9 +26,9 @@
     "@context": "https://schema.org",
     "@type": "Bakery",
     "name": "Confeitaria Pamela Nardotto",
-    "image": "URL_LOGO",
+    "image": "imagens/logo.png",
     "@id": "",
-    "url": "URL_DO_SITE",
+    "url": "https://www.confeitariapamelanardotto.com.br",
     "telephone": "+5511913769532",
     "priceRange": "R$",
     "address": {
@@ -44,18 +44,26 @@
         "latitude": -23.536000,
         "longitude": -46.782000
     },
-    "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-        ],
-        "opens": "10:00",
-        "closes": "19:00"
-    }
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "12:00",
+            "closes": "18:00"
+        }
+    ]
     }
     </script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
