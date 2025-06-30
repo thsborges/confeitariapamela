@@ -528,7 +528,7 @@ address {
     border-radius: 8px;
 }
 
-.btn-ifood {
+.btn-pagina {
     display: inline-block;
     background-color: var(--pink-color);
     color: white;
@@ -542,33 +542,11 @@ address {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn-ifood:hover {
+.btn-pagina:hover {
     background-color: #911c5c;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
-
-.btn-whatsapp {
-    display: inline-block;
-    background-color: var(--pink-color);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: var(--font-footer);
-    font-weight: 600;
-    margin-top: 15px;
-    transition: var(--transition);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-whatsapp:hover {
-    background-color: #911c5c;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-}
-
-
 
 footer {
     margin-top: 50px;
@@ -620,6 +598,9 @@ footer > p {
     padding-right: 10px;
     border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
+.contato-info-box > a {
+    text-decoration: none;
+}
 
 .text > h3 {
     color: var(--text-footer);
@@ -638,6 +619,23 @@ footer > p {
     margin: 0px;
     line-height: 1.4;
 }
+#horario > h3 {
+    color: var(--text-footer);
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+#horario > address {
+    font-family: var(--font-footer);
+    color: var(--text-footer);
+    font-style: normal;
+    font-size: 0.9em;
+    font-weight: 200;
+    margin: 0px;
+    line-height: 1.4;
+}
 
 .text > p {
     font-family: var(--font-footer);
@@ -647,6 +645,19 @@ footer > p {
     font-weight: 200;
     margin: 0px;
 }
+.contato-info-box > .text:hover > h3 {
+    color: var(--border-color);
+    text-decoration: underline;
+}
+
+.contato-info-box > .text:hover > address {
+    text-decoration: underline;
+}
+
+.contato-info-box > .text:hover > p {
+    text-decoration: underline;
+}
+
 
 .social-box > h2 {
     color: var(--text-footer);
