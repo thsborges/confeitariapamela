@@ -349,25 +349,6 @@ section.no-card p {
     animation: fadeIn 1s ease;
 }
 
-#boas-vindas > h2 {
-    padding-top: 60px;
-    margin-top: 5px;
-    background-image: url('imagens/ornamento-up.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 205px;
-}
-
-#boas-vindas > p {
-    padding-bottom: 70px;
-    margin-bottom: 5px;
-    background-image: url('imagens/ornamento-down.png');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 205px;
-
-}
-
 img.foto {
     display: block;
     border: 1px solid var(--border-color);
@@ -433,14 +414,6 @@ section.card > p {
     border-radius: 4px;
 }
 
-#local > h2 {
-    background-image: url('imagens/ornamento-up.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 205px;
-    padding-top: 60px;
-}
-
 address {
     font-family: var(--font-body);
     font-size: 1em;
@@ -453,20 +426,11 @@ address {
     margin-top: 40px;
 }
 
-#cardapio > h2 {
-    background-image: url('imagens/ornamento-up.png');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 205px;
-    padding-bottom: 50px;
-}
-
 #p-strong {
     color: var(--tittle-color2);
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 10px;
-    padding-top: 10px;
 }
 
 #cardapio > #p-lower {
