@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <!-- Meta Description -->
-    <meta name="author" content="Confeitaria Pamela Nardotto - Doces, Bolos e Salgados em Osasco - SP.">
+    <meta name="author" content="Confeitaria Pamela Nardotto">
     <meta name="description" content="Confeitaria Pamela Nardotto - Doces, Bolos e Salgados em Osasco - SP. Bolos artesanais, doces gourmet e salgados. Localizada no bairro Bela Vista, em Osasco, a Confeitaria Pamela Nardotto é um espaço charmoso e acolhedor. Trabalhamos com um cardápio variado e irresistível! Temos delivery via iFood e pedido de encomendas para eventos.">
     <meta name="additional-info" content="Confeitaria Pamela Nardotto - Rua Francisco Lameu, 421, Bela Vista, Osasco - SP. Aberto de Terça a Domingo, das 10h às 19h (Domingos, meio-dia). Delivery disponível pelo Ifood. Encomendas pelo WhatsApp.">
     <meta name="keywords" content="confeitaria, bolos, doces, banoffe, coxinha, salgados, Osasco, delivery, encomendas, sobremesas, café, brunch, tortas, empadão, pão de queijo, brownie, panquecas, fondue, lasanha, sopas, soda italiana">
@@ -81,7 +81,7 @@
     </header>
 
     <nav class="nav-container">
-        <button class="menu-toggle">☰</button>
+        <button aria-expanded="false" aria-controls="nav-menu" class="menu-toggle">☰</button>
         <div class="nav-menu">
             <a href="#home">HOME</a>
             <a href="#confeitaria">A CONFEITARIA</a>
@@ -93,14 +93,14 @@
     </nav>
 
     <main>
-        <div class="carousel-container">
+        <section class="carousel-container" aria-label="Produtos em destaque">
             <!-- Botões de seta adicionados -->
-            <button class="carousel-arrow prev-arrow">&#10094;</button>
-            <button class="carousel-arrow next-arrow">&#10095;</button>
+            <button aria-label="Slide anterior" class="carousel-arrow prev-arrow">&#10094;</button>
+            <button aria-label="Próximo slide" class="carousel-arrow next-arrow">&#10095;</button>
             <!-- Botões de seta adicionados -->
             <div class="carousel">
                 <div class="carousel-item">
-                    <img src="imagens/brownie-sorvete2.jpg" alt="Bolinho de Chuva">
+                    <img src="imagens/brownie-sorvete2.jpg" alt="Brownie de chocolate com sorvete de creme e morangos frescos">
                     <div class="img-overlay">
                         <h2 class="img-title">SIGA NOSSO INSTAGRAM</h2>
                         <p class="img-description">E fique por dentro das novidades e promoções exclusivas.</p>
@@ -108,10 +108,10 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="imagens/bolinho-chuva.jpg" alt="Empadão com Salada">
+                    <img src="imagens/bolinho-chuva.jpg" alt="Bolinho de chuva com doce de leite">
                 </div>
                 <div class="carousel-item">
-                    <img src="imagens/torta-morango.jpg" alt="Brownie com Sorvete">
+                    <img src="imagens/torta-morango.jpg" alt="Waffles com sorvete de morango, cobertura de chocolate e morangos">
                     <div class="img-overlay">
                         <h2 class="img-title">PEÇA PELO IFOOD</h2>
                         <p class="img-description">Receba nossas delícias em casa.</p>
@@ -119,7 +119,7 @@
                     </div>
                 </div>               
                 <div class="carousel-item">
-                    <img src="imagens/empadao-salada.jpg" alt="Torta de Morango">
+                    <img src="imagens/empadao-salada.jpg" alt="Empadão de frango com salada de folhas verdes, tomate e queijo">
                 </div>
             </div>
             
@@ -129,9 +129,9 @@
                 <div class="indicator" data-index="2"></div>
                 <div class="indicator" data-index="3"></div>
             </div>
-        </div>
+        </section>
 
-        <section id="boas-vindas">
+        <section class="no-card" id="boas-vindas">
             <img class="ornamento-up" src="imagens/ornamento-up.png" alt="ornamento decoração">
             <h2>Bem-vindo</h2>
             <p>Descubra nossas delícias, feitas com muito amor e carinho.</p>
@@ -146,7 +146,7 @@
             <img src="imagens/fachada.webp" alt="Fachada da Confeitaria Pamela Nardotto">
         </section>
 
-        <section id="local">
+        <section class="no-card" id="local">
             <img class="ornamento-up" src="imagens/ornamento-up.png" alt="ornamento decoração">
             <h2>Venha nos visitar!</h2>
             <address>R. Francisco Lameu, 421 - Bela Vista, Osasco/SP.</address>
@@ -204,7 +204,7 @@
 
         <img id="flor2" src="imagens/flores.png" alt="decoração flores">
 
-        <section id="delivery">
+        <section class="no-card" id="delivery">
             <h2>Delivery</h2>
             <p>Também temos opção de delivery!</p>
             <p>Faça seu pedido pelo <strong>Ifood</strong> e receba nossas delícias diretamente na sua porta. Aproveite!</p>
@@ -213,7 +213,7 @@
         
         <img class="foto" id="brownie" src="imagens/brownie-sorvete.jpg" alt="brownie de chocolate com sorvete e calda de chocolate">
 
-        <section id="encomendas">
+        <section class="no-card" id="encomendas">
             <h2>Encomendas</h2>
             <p>Aceitamos encomendas de bolos, doces e salgados para festas, eventos e celebrações especiais!</p>
             <p>Entre em contato pelo nosso WhatsApp para mais informações e consulte disponibilidade.</p>
