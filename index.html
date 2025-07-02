@@ -79,6 +79,7 @@
     
 </head>
 <body>
+    <button class="sr-only" id="pular-conteudo" onclick="document.getElementById('boas-vindas').focus();" aria-label="Pular para o conteúdo principal">Pular para o conteúdo principal</button>
     <aside id="banner-ifood" aria-label="Banner do Ifood">
         <p>FAÇA AGORA SEU PEDIDO NO <a href="https://www.ifood.com.br/delivery/osasco-sp/confeitaria-pamela-nardotto---doces-bolos--salgados-vila-osasco/ae6b4d38-93e4-494a-a6b6-bc89e3c68a59" target="_blank" rel="noopener">IFOOD</a></p>
     </aside>
@@ -140,7 +141,7 @@
             </div>
         </section>
 
-        <section class="no-card" id="boas-vindas">
+        <section class="no-card" id="boas-vindas" tabindex="-1" aria-label="Boas-vindas">
             <img class="ornamento-up" src="imagens/ornamento-up.png" alt="" aria-hidden="true">
             <h2>Bem-vindo</h2>
             <p>Descubra nossas delícias, feitas com muito amor e carinho.</p>
